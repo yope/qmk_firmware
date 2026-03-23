@@ -85,7 +85,9 @@
 #    elif WS2812_SPI_DIVISOR == 256
 #        define WS2812_SPI_DIVISOR_CR1_BR_X (SPI_CR1_BR_2 | SPI_CR1_BR_1 | SPI_CR1_BR_0)
 #    else
+#      if !(defined(WB32F3G71xx) || defined(WB32FQ95xx))
 #        error "Configured WS2812_SPI_DIVISOR value is not supported at this time."
+#      endif
 #    endif
 #endif
 
